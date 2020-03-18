@@ -38,54 +38,54 @@ function changeVocals (str) {
 }
 console.log(changeVocals('Sergei Dragunov'));
 
-// function reverseWord (ubahHuruf) {
-// //code di sini
-//     var kebalik = '';
-//     for (var a = ubahHuruf.length - 1; a >= 0; a--) {
-//         kebalik += ubahHuruf[a];
-//     }
-//     return kebalik;
-// }
-// // console.log(reverseWord(changeVocals('Sergei Dragunov')));
+function reverseWord (ubahHuruf) {
+//code di sini
+    var kebalik = '';
+    for (var a = ubahHuruf.length - 1; a >= 0; a--) {
+        kebalik += ubahHuruf[a];
+    }
+    return kebalik;
+}
+// console.log(reverseWord(changeVocals('Sergei Dragunov')));
 
-// function setLowerUpperCase (kebalik) {
-// //code di sini
-//     var ubahUkuran = ''
-//     for (var i = 0; i < kebalik.length; i++) {
-//         if (kebalik[i] === kebalik[i].toUpperCase()) {
-//             ubahUkuran += kebalik[i].toLowerCase();
-//         }
-//         else {
-//             ubahUkuran += kebalik[i].toUpperCase();
-//         }
-//     }
-//     return ubahUkuran;
-// }
-// // console.log(setLowerUpperCase(reverseWord(changeVocals('Sergei Dragunov'))));
+function setLowerUpperCase (kebalik) {
+//code di sini
+    var ubahUkuran = ''
+    for (var i = 0; i < kebalik.length; i++) {
+        if (kebalik[i] === kebalik[i].toUpperCase()) {
+            ubahUkuran += kebalik[i].toLowerCase();
+        }
+        else {
+            ubahUkuran += kebalik[i].toUpperCase();
+        }
+    }
+    return ubahUkuran;
+}
+// console.log(setLowerUpperCase(reverseWord(changeVocals('Sergei Dragunov'))));
 
-// function removeSpaces (ubahUkuran) {
-// //code di sini
-//     var noSpace = '';
-//     for (var i = 0; i < ubahUkuran.length; i++) {
-//         if (ubahUkuran[i] !== ' ') {
-//             noSpace += ubahUkuran[i];
-//         }
-//     }
-//     return noSpace;
-// }
-// // console.log(removeSpaces(setLowerUpperCase(reverseWord(changeVocals('Sergei Dragunov')))));
+function removeSpaces (ubahUkuran) {
+//code di sini
+    var noSpace = '';
+    for (var i = 0; i < ubahUkuran.length; i++) {
+        if (ubahUkuran[i] !== ' ') {
+            noSpace += ubahUkuran[i];
+        }
+    }
+    return noSpace;
+}
+// console.log(removeSpaces(setLowerUpperCase(reverseWord(changeVocals('Sergei Dragunov')))));
 
-// function passwordGenerator (name) {
-// //code di sini
-//     var ubah = changeVocals(name);
-//     var balikin = reverseWord(ubah);
-//     var gedeKecil = setLowerUpperCase(balikin);
-//     var balikan = removeSpaces(gedeKecil);
-//     return balikan;
-// }
+function passwordGenerator (name) {
+//code di sini
+    var ubah = changeVocals(name);
+    var balikin = reverseWord(ubah);
+    var gedeKecil = setLowerUpperCase(balikin);
+    var balikan = removeSpaces(gedeKecil);
+    return balikan;
+}
 
 
-// console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
-// console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
-// console.log(passwordGenerator('Alexei')); // 'JFXFLb'
-// console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'
+console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
+console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
+console.log(passwordGenerator('Alexei')); // 'JFXFLb'
+console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'
