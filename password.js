@@ -1,42 +1,30 @@
-function changeVocals (str) {
+function changeVocals(str) {
 //code di sini
     var abjadKecil = 'abcdefghijklmnopqrstuvwxyz';
     var abjadBesar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var vokalKecil = 'aiueo';
-    var vokalBesar = 'AIUEO';
     var ubahHuruf = '';
     for (var i = 0; i < str.length; i++) {
-        for (var m = 0; m < vokalBesar.length; m++) {
-            if (str[i] === vokalBesar[m]) {
-                for (var k = 0; k < abjadBesar.length; k++) {
-                    if (str[i] === abjadBesar[k]) {
-                        ubahHuruf += abjadBesar[k+1];
-                    }
+        if (str[i] === 'A' || str[i] === 'I' || str[i] === 'U' || str[i] === 'E' || str[i] === 'O') {
+            for (var j = 0; j < abjadBesar.length; j++) {
+                if (str[i] === abjadBesar[j]) {
+                    ubahHuruf += abjadBesar[j+1];
                 }
             }
-            else {
-                ubahHuruf += str[i];
-            }
         }
-        for (var l = 0; l < vokalKecil.length; l++) {
-            if (str[i] === vokalKecil[l]) {
-                for (var j = 0; j < abjadKecil.length; j++) {
-                    if (str[i] === abjadKecil[j]) {
-                        ubahHuruf += abjadKecil[j+1];
-                    }
+        else if (str[i] === 'a' || str[i] === 'i' || str[i] === 'u' || str[i] === 'e' || str[i] === 'o') {
+            for (var j = 0; j < abjadKecil.length; j++) {
+                if (str[i] === abjadKecil[j]) {
+                    ubahHuruf += abjadKecil[j+1];
                 }
             }
-            else {
-                ubahHuruf += str[i];
-            }
         }
-        if (str[i] === ' '){
+        else {
             ubahHuruf += str[i];
         }
     }
     return ubahHuruf;
 }
-console.log(changeVocals('Sergei Dragunov'));
+// console.log(changeVocals('Sergei Dragunov'));
 
 function reverseWord (ubahHuruf) {
 //code di sini
@@ -77,11 +65,16 @@ function removeSpaces (ubahUkuran) {
 
 function passwordGenerator (name) {
 //code di sini
-    var ubah = changeVocals(name);
-    var balikin = reverseWord(ubah);
-    var gedeKecil = setLowerUpperCase(balikin);
-    var balikan = removeSpaces(gedeKecil);
-    return balikan;
+    if (name.length < 5) {
+        return 'Minimal karakter yang diinputkan adalah 5 karakter'
+    }
+    else {
+        var ubah = changeVocals(name);
+        var balikin = reverseWord(ubah);
+        var gedeKecil = setLowerUpperCase(balikin);
+        var balikan = removeSpaces(gedeKecil);
+        return balikan;
+    }
 }
 
 
